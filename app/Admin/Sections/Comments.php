@@ -46,7 +46,7 @@ class Comments extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(4)->setIcon('fas fa-lightbulb');
+        $this->addToNavigation()->setPriority(4)->setIcon('fas fa-comment');
     }
 
     /**

@@ -46,7 +46,7 @@ class User extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(2)->setIcon('fas fa-lightbulb');
+        $this->addToNavigation()->setPriority(2)->setIcon('fas fa-address-book');
     }
 
     /**

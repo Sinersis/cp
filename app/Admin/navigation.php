@@ -38,7 +38,7 @@ return [
     [
         'title' => 'Logout',
         'priority' => 99999,
-        'icon'  => 'fas fa-info-circle',
+        'icon'  => 'fas fa-times',
         'url'   => route('admin.logout'),
     ],
 

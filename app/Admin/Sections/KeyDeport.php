@@ -46,7 +46,7 @@ class KeyDeport extends Section implements Initializable
      */
     public function initialize()
     {
-        $this->addToNavigation()->setPriority(6)->setIcon('fas fa-lightbulb');
+        $this->addToNavigation()->setPriority(6)->setIcon('fas fa-tags');
     }
 
     /**
