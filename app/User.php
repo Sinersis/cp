@@ -42,4 +42,9 @@ class User extends Authenticatable
         1 => 'Администратор',
         2 => 'Участник',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
+    }
 }
