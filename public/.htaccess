@@ -19,3 +19,10 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+#RewriteEngine on
+#RewriteCond %{SERVER_NAME} =keyidea.7clouds.in [OR]
+#RewriteCond %{SERVER_NAME} =www.keyidea.7clouds.in
+#RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+#COMPOSER_MEMORY_LIMIT=-1 composer require laravelrus/sleepingowl:"7.*"
