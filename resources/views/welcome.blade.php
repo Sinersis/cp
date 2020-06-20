@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Brain Storm
+                    Key Idea
                 </div>
 
                 <div class="links">
