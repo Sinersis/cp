@@ -12,14 +12,8 @@ class KeyDeport extends Model
 
     public $timestamps = false;
 
-    public function departments()
+    public function department()
     {
-        return $this
-            ->belongsToMany(
-                Department::class,
-                'department_key_deport',
-                'key_deport_id',
-                'department_id'
-            );
+        return $this->belongsTo(Department::class);
     }
 }

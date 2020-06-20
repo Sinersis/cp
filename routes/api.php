@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/searchComparePostsCount', 'PostController@searchByComparePostsCounts');
+Route::get('/searchComparePosts', 'PostController@searchByComparePosts');
+Route::get('/searchDepartmentByTags', 'PostController@searchDepartmentByTags');

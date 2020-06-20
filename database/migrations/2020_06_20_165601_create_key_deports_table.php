@@ -17,6 +17,7 @@ class CreateKeyDeportsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->unsignedInteger('department_id');
         });
     }
 

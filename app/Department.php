@@ -14,12 +14,6 @@ class Department extends Model
 
     public function keys()
     {
-        return $this
-            ->belongsToMany(
-                KeyDeport::class,
-                'department_key_deport',
-                'department_id',
-                'key_deport_id'
-            );
+        return $this->hasMany(KeyDeport::class);
     }
 }
