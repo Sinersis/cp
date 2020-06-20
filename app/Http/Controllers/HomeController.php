@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,10 +21,14 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable|RedirectResponse
      */
     public function index()
     {
+        if (\Auth::user()->role == 1) {
+            return redirect()->to('/admin');
+        }
+        
         return view('home');
     }
 }
