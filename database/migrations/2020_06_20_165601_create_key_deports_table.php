@@ -15,7 +15,7 @@ class CreateKeyDeportsTable extends Migration
     {
         Schema::create('key_deports', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->string('slug');
         });
     }

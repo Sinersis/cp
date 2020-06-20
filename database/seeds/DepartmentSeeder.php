@@ -13,6 +13,8 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
+        Department::query()->truncate();
+
         $department = [
             'Департамент CRM и развития цифровых каналов продаж',
             'Департамент коммуникаций и маркетинга',
@@ -37,7 +39,7 @@ class DepartmentSeeder extends Seeder
         foreach ($department as $item) {
 
             $row = new Department([
-                'title' => $item,
+                'name' => $item,
                 'slug' => Str::slug($item)
             ]);
 

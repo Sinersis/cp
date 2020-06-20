@@ -12,6 +12,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
+        \App\User::query()->truncate();
+
         $users = [
             [
                 'name' => 'User Admin',
