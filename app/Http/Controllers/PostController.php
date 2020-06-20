@@ -24,7 +24,11 @@ class PostController extends Controller
 
     public function searchDepartmentByTags(Request $request)
     {
-        $tags = KeyDeport::query()->where('name', 'like', '%'.$request->get('body').'%')->get();
+        $str = [',', ', ','.','. ',' , ','!','! ','?','? '];
+
+        $body = str_replace($str, ' ',$request->get('body'));
+        $body = explode(' ', $body);
+        $tags = KeyDeport::query()->whereIn('name', $body)->get();
 
         $result = [];
 

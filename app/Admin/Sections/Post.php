@@ -58,10 +58,10 @@ class Post extends Section implements Initializable
     {
         $columns = [
             AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name')
+            AdminColumn::link('title', 'Title')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
-                        ->orWhere('name', 'like', '%'.$search.'%');
+                        ->orWhere('title', 'like', '%'.$search.'%');
                 })
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
