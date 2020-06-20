@@ -57,26 +57,22 @@ class Comments extends Section implements Initializable
     public function onDisplay($payload = [])
     {
         $columns = [
-            AdminColumn::text('id', '#')->setWidth('50px')->setHtmlAttribute('class', 'text-center'),
-            AdminColumn::link('name', 'Name', 'created_at')
+            AdminColumn::text('id', '#')->setWidth('50px')
+                ->setHtmlAttribute('class', 'text-center'),
+            AdminColumn::link('body', 'Name')
                 ->setSearchCallback(function($column, $query, $search){
                     return $query
-                        ->orWhere('name', 'like', '%'.$search.'%')
-                        ->orWhere('created_at', 'like', '%'.$search.'%')
-                    ;
+                        ->orWhere('body', 'like', '%'.$search.'%');
                 })
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
-                })
-            ,
-            AdminColumn::boolean('name', 'On'),
-            AdminColumn::text('created_at', 'Created / updated', 'updated_at')
+                }),
+            AdminColumn::text('created_at', 'Created / updated')
                 ->setWidth('160px')
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('updated_at', $direction);
                 })
-                ->setSearchable(false)
-            ,
+                ->setSearchable(false),
         ];
 
         $display = AdminDisplay::datatables()
@@ -85,20 +81,8 @@ class Comments extends Section implements Initializable
             ->setDisplaySearch(true)
             ->paginate(25)
             ->setColumns($columns)
-            ->setHtmlAttribute('class', 'table-primary table-hover th-center')
-        ;
+            ->setHtmlAttribute('class', 'table-primary table-hover th-center');
 
-        $display->setColumnFilters([
-            AdminColumnFilter::select()
-                ->setModelForOptions(\App\Comments::class, 'name')
-                ->setLoadOptionsQueryPreparer(function($element, $query) {
-                    return $query;
-                })
-                ->setDisplay('name')
-                ->setColumnName('name')
-                ->setPlaceholder('All names')
-            ,
-        ]);
         $display->getColumnFilters()->setPlacement('card.heading');
 
         return $display;

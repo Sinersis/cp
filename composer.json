@@ -15,7 +15,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "laravelrus/sleepingowl": "7.*"
+        "laravelrus/sleepingowl": "7.*",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
