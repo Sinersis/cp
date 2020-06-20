@@ -1,5 +1,9 @@
 **Проект для хакатона "_Цифровой прорыв 2020_"**
 
+Веб версия: https://github.com/Sinersis/cp
+
+Тематическое моделирование: https://github.com/Eugeneifes/Key_Idea
+
 Команда **_Key Idea_**
 
 Егор Юсупов
