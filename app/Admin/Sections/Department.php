@@ -67,6 +67,9 @@ class Department extends Section implements Initializable
                 ->setOrderable(function($query, $direction) {
                     $query->orderBy('created_at', $direction);
                 }),
+            AdminColumn::custom('Score', function () {
+                return rand(50,500);
+            }),
         ];
 
         $display = AdminDisplay::datatables()
