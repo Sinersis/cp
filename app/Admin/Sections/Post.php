@@ -67,6 +67,10 @@ class Post extends Section implements Initializable
                     $query->orderBy('created_at', $direction);
                 }),
 
+            AdminColumn::custom('Score', function () {
+                return rand(1,100);
+            });
+
             AdminColumn::text('created_at', 'Created / updated')
                 ->setWidth('160px')
                 ->setOrderable(function($query, $direction) {
