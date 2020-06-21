@@ -38,4 +38,9 @@ class PostController extends Controller
 
         return response()->json(array_unique($result));
     }
+
+    public function allPosts()
+    {
+        return Post::with('tags')->get();
+    }
 }
